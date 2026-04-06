@@ -1,0 +1,37 @@
+{
+    "name": "wezlo/filament-approval",
+    "description": "Approval Workflow Engine for Filament v5",
+    "keywords": ["laravel", "filament", "approval", "workflow"],
+    "license": "MIT",
+    "version": "1.0.0",
+    "type": "library",
+    "require": {
+        "php": "^8.4",
+        "filament/filament": "^5.0",
+        "spatie/laravel-package-tools": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-livewire": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wezlo\\FilamentApproval\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wezlo\\FilamentApproval\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wezlo\\FilamentApproval\\FilamentApprovalServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
