@@ -11,8 +11,8 @@ return new class extends Migration
         Schema::create('approval_delegations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('approval_step_instance_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('from_user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('to_user_id')->constrained('users')->cascadeOnDelete();
+            $table->string('from_user_id')->index();
+            $table->string('to_user_id')->index();
             $table->text('reason')->nullable();
             $table->timestamp('delegated_at');
             $table->timestamps();

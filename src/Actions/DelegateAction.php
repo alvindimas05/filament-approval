@@ -60,7 +60,7 @@ class DelegateAction extends Action
                 app(ApprovalEngine::class)->delegate(
                     $stepInstance,
                     auth()->id(),
-                    (int) $data['to_user_id'],
+                    $data['to_user_id'],
                     $data['reason'] ?? null,
                 );
 

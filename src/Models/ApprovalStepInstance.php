@@ -48,7 +48,7 @@ class ApprovalStepInstance extends Model
         return $this->hasMany(ApprovalDelegation::class);
     }
 
-    public function canUserAct(int $userId): bool
+    public function canUserAct(string|int $userId): bool
     {
         if (in_array($userId, $this->assigned_approver_ids)) {
             return true;
@@ -59,7 +59,7 @@ class ApprovalStepInstance extends Model
             ->exists();
     }
 
-    public function hasUserActed(int $userId): bool
+    public function hasUserActed(string|int $userId): bool
     {
         return $this->actions()
             ->where('user_id', $userId)

@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('approval_id')->constrained()->cascadeOnDelete();
             $table->foreignId('approval_step_instance_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
+            $table->string('user_id')->nullable();
             $table->string('type');
             $table->text('comment')->nullable();
             $table->json('metadata')->nullable();

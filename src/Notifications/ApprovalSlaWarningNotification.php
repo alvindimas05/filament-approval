@@ -9,7 +9,7 @@ use Wezlo\FilamentApproval\Models\ApprovalStepInstance;
 
 class ApprovalSlaWarningNotification
 {
-    public static function send(ApprovalStepInstance $stepInstance, int $userId): void
+    public static function send(ApprovalStepInstance $stepInstance, string|int $userId): void
     {
         $userModel = FilamentApprovalPlugin::resolveUserModel();
         $recipient = $userModel::find($userId);

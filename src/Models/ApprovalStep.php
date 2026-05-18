@@ -36,7 +36,7 @@ class ApprovalStep extends Model
     /**
      * Resolve the approver IDs using the configured resolver.
      *
-     * @return array<int>
+     * @return array<string|int>
      */
     public function resolveApproverIds(Model $approvable): array
     {

@@ -11,7 +11,7 @@ interface ApproverResolver
      * Resolve the user IDs who should approve this step.
      *
      * @param  array<string, mixed>  $config
-     * @return array<int>
+     * @return array<string|int>
      */
     public function resolve(array $config, Model $approvable): array;
 

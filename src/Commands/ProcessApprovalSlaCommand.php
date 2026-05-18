@@ -85,8 +85,8 @@ class ProcessApprovalSlaCommand extends Command
 
         match ($action) {
             EscalationAction::Notify => $this->sendEscalationNotification($instance),
-            EscalationAction::AutoApprove => $engine->approve($instance, 0, __('filament-approval::approval.sla.auto_approved')),
-            EscalationAction::Reject => $engine->reject($instance, 0, __('filament-approval::approval.sla.auto_rejected')),
+            EscalationAction::AutoApprove => $engine->approve($instance, null, __('filament-approval::approval.sla.auto_approved')),
+            EscalationAction::Reject => $engine->reject($instance, null, __('filament-approval::approval.sla.auto_rejected')),
             EscalationAction::Reassign => $this->reassign($instance),
         };
 

@@ -9,7 +9,7 @@ use Wezlo\FilamentApproval\Models\Approval;
 
 class ApprovalApprovedNotification
 {
-    public static function send(Approval $approval, int $userId): void
+    public static function send(Approval $approval, string|int $userId): void
     {
         $userModel = FilamentApprovalPlugin::resolveUserModel();
         $recipient = $userModel::find($userId);
