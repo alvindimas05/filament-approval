@@ -27,6 +27,7 @@ class ApprovalSlaWarningNotification
             ->body(__('filament-approval::approval.notifications.sla_warning_body', ['model' => $modelLabel, 'id' => $approvable->getKey(), 'deadline' => $deadline]))
             ->icon(Heroicon::OutlinedClock)
             ->warning()
+            ->broadcast($recipient)
             ->sendToDatabase($recipient);
     }
 }

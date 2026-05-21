@@ -26,6 +26,7 @@ class ApprovalApprovedNotification
             ->body(__('filament-approval::approval.notifications.approved_body', ['model' => $modelLabel, 'id' => $approvable->getKey()]))
             ->icon(Heroicon::OutlinedCheckCircle)
             ->success()
+            ->broadcast($recipient)
             ->sendToDatabase($recipient);
     }
 }

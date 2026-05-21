@@ -26,6 +26,7 @@ class ApprovalRejectedNotification
             ->body(__('filament-approval::approval.notifications.rejected_body', ['model' => $modelLabel, 'id' => $approvable->getKey()]))
             ->icon(Heroicon::OutlinedXCircle)
             ->danger()
+            ->broadcast($recipient)
             ->sendToDatabase($recipient);
     }
 }

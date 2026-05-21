@@ -26,6 +26,7 @@ class ApprovalRequestedNotification
             ->body(__('filament-approval::approval.notifications.requested_body', ['model' => $modelLabel, 'id' => $approvable->getKey()]))
             ->icon(Heroicon::OutlinedClipboardDocumentCheck)
             ->warning()
+            ->broadcast($recipient)
             ->sendToDatabase($recipient);
     }
 }

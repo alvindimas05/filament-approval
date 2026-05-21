@@ -26,6 +26,7 @@ class ApprovalEscalatedNotification
             ->body(__('filament-approval::approval.notifications.escalated_body', ['model' => $modelLabel, 'id' => $approvable->getKey()]))
             ->icon(Heroicon::OutlinedExclamationTriangle)
             ->danger()
+            ->broadcast($recipient)
             ->sendToDatabase($recipient);
     }
 }
